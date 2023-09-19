@@ -1,0 +1,290 @@
+:root {
+    --main-color: #eceff1;
+    --secondary-color: #00b0ff;
+    --main-fontcolor: #777;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 100%;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.container::before {
+    content: "";
+    width: calc(100% - 60px);
+    height: 2px;
+    background: #eee;
+    position: absolute;
+    top: -3px;
+}
+
+.parent {
+    position: relative;
+    display: flex;
+}
+
+.parent .img {
+    width: 100%;
+    height: 100vh;
+}
+
+.parent .img img {
+    width: 100%;
+    height: 100%;
+}
+
+.parent .page {
+    background-color: white;
+    width: 1000px;
+    height: 700px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+.parent .page .left {
+    width: 40%;
+    height: 100%;
+    border-right: 1px solid #999;
+}
+
+.parent .page .left .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateY(3px);
+}
+
+.parent .page .left .top input {
+    width: 75%;
+    height: 40px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    background-color: var(--main-color);
+    padding-left: 20px;
+    color: var(--main-fontcolor);
+    transform: translateY(20px);
+}
+
+.parent .page .left .top .logo {
+    background-color: var(--secondary-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: relative;
+    transform: translateY(20px);
+}
+
+.parent .page .left .top .logo::before {
+    content: "";
+    width: 35%;
+    height: 35%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid white;
+    border-radius: 15%;
+}
+
+.parent .page .left .top .logo::after {
+    content: "";
+    background: white;
+    position: absolute;
+    width: 30%;
+    height: 5%;
+    right: 7px;
+    top: 13px;
+    transform: rotate(140deg);
+}
+
+.page .left .list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-top: 30px;
+    height: 75%;
+    padding-bottom: 15px;
+}
+
+.page .left .list .person {
+    width: 100%;
+    height: 85px;
+    position: relative;
+}
+
+.page .left .list .person img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.page .left .list .person h3 {
+    font-size: 19px;
+    position: absolute;
+    top: 0;
+    left: 95px;
+}
+
+.page .left .list .person p {
+    color: #777;
+    position: absolute;
+    top: 30px;
+    left: 100px;
+}
+
+.page .left .list .person span {
+    position: absolute;
+    top: 22px;
+    right: 30px;
+    color: #777;
+}
+
+.page .left .list .six {
+    background-color: var(--secondary-color);
+    color: white;
+    border-top: 1px solid transparent;
+}
+
+.page .left .list .six p,
+.page .left .list .six span {
+    color: white;
+}
+
+.parent .right {
+    width: 60%;
+    position: relative;
+    display: grid;
+    flex-direction: column;
+}
+
+.parent .right .send {
+    background-color: #eee;
+    height: 55px;
+    padding-top: 3.5px;
+    color: var(--main-fontcolor);
+}
+
+.parent .right .send span {
+    font-weight: bold;
+    color: black;
+}
+
+.parent .right .date {
+    color: var(--main-fontcolor);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30%;
+}
+
+.parent .right .date::before {
+    content: "";
+    position: absolute;
+    width: 160px;
+    height: 2px;
+    top: 7px;
+    left: -190px;
+    background-color: var(--main-color);
+}
+
+.parent .right .date::after {
+    content: "";
+    position: absolute;
+    width: 160px;
+    height: 2px;
+    top: 7px;
+    right: -190px;
+    background-color: var(--main-color);
+}
+
+.right .chat .container1 {
+    width: 100%;
+    height: 80%;
+    padding: 15px 30px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    top: -110px;
+}
+
+.right .chat .container1 .blue,
+.right .chat .container1 .gray {
+    width: fit-content;
+    height: 40px;
+    color: white;
+    padding: 10px;
+    border-radius: 6%;
+    position: relative;
+    margin: -20px 0;
+}
+
+.right .chat .container1 .blue {
+    background-color: var(--secondary-color);
+
+}
+
+.right .chat .container1 .blue::before,
+.right .chat .container1 .gray::before {
+    content: "";
+    width: 0px;
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+    position: absolute;
+}
+
+.right .chat .container1 .blue::before {
+    border-color: transparent var(--secondary-color) transparent transparent;
+    left: -18px;
+}
+
+.right .chat .container1 .gray {
+    background-color: var(--main-fontcolor);
+    text-align: right;
+    align-self: flex-end;
+}
+
+.right .chat .container1 .gray::before {
+    border-color: transparent transparent transparent gray;
+    right: -18px;
+}
+
+.right .chat .typing {
+    background-color: var(--main-color);
+    width: 430px;
+    height: 50px;
+    transform: translate(22%, -68px);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.right .chat .typing i {
+    font-size: 25px;
+    color: #b1b2b2;
+    padding-right: 20px;
+}
+
+.right .chat .typing i.one {
+    left: 20px;
+    top: 5px;
+    position: absolute;
+    transform: rotate(315deg)
+}
